@@ -1,21 +1,30 @@
-# {Company} Node Library
+# Suger Node Library
 
-[![npm shield](https://img.shields.io/npm/v/@fern-api/{company})](https://www.npmjs.com/package/@fern-api/{company})
+[![npm shield](https://img.shields.io/npm/v/@fern-api/suger)](https://www.npmjs.com/package/@fern-api/suger)
 
-The {Company} Node.js library provides access to the {Company} API from JavaScript/TypeScript.
+The Suger Node.js library provides access to the Suger API from JavaScript/TypeScript.
 
 ## Documentation
 
-API documentation is available at <{docs_url}>.
+API documentation is available at https://www.suger.io/docs/get-started.
 
 ## Usage
 
-[![Try it out](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](TODO)
+[![Open in Stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/typescript-example-using-sdk-built-with-fern-urmfsz?file=app.ts)
 
 ```typescript
-import { TODO } from "TODO";
+import { SugerApiClient } from '@fern-api/suger';
 
-const TODO
+const client = new SugerApiClient({
+  token: 'MY_TOKEN',
+});
+
+const response = await client.product.create('orgId', {
+  externalId: 'externalId',
+  name: 'name',
+});
+
+console.log('Received response from Suger', response);
 ```
 
 ## Beta status
